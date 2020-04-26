@@ -1,25 +1,72 @@
 import React, { useState, useEffect } from 'react';
 import { Center } from '../../components/typography/Styled';
 import { Section } from '../../components/section/Section';
+import { StyledH2, ClippedSection } from './Sections.styled';
 import {
-  VersionColumn,
-  StyledH2,
-  StyledP,
-  StyledLND,
-  Row,
-  ClippedSection,
-} from './Sections.styled';
-import { homeCompatibleColor, inverseTextColor } from '../../styles/Themes';
+  homeCompatibleColor,
+  inverseTextColor,
+  mediaWidths,
+} from '../../styles/Themes';
 import { useTransition, animated } from 'react-spring';
 import image from '../../assets/LND.png';
 import { useInView } from 'react-intersection-observer';
 import 'intersection-observer'; // Polyfill
+import styled from 'styled-components';
+
+const StyledVersion = styled.div`
+  font-size: 18px;
+  padding: 4px 0;
+
+  @media (${mediaWidths.mobile}) {
+    padding: 0;
+  }
+`;
+
+const AnimatedVersion = animated(StyledVersion);
+
+const CompatibleRow = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (${mediaWidths.mobile}) {
+    flex-direction: column-reverse;
+  }
+`;
+
+const CompatibleColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  padding: 40px 0 60px;
+  height: 300px;
+
+  @media (${mediaWidths.mobile}) {
+    padding: 0;
+    height: 200px;
+    width: 100%;
+  }
+`;
+
+const CompatibleLND = styled.img`
+  display: block;
+  max-width: 260px;
+  width: auto;
+  height: auto;
+
+  @media (${mediaWidths.mobile}) {
+    max-width: 240px;
+  }
+`;
 
 export const Compatible = () => {
   const [items, setItems] = useState([]);
 
   const [ref, inView] = useInView({
-    threshold: 0.6,
+    threshold: 0.3,
     triggerOnce: true,
   });
 
@@ -54,26 +101,22 @@ export const Compatible = () => {
         color={homeCompatibleColor}
         padding={'40px 0'}
       >
-        <div style={{ width: '100%' }}>
-          <Center>
-            <StyledH2>Compatible with the latest LND node versions.</StyledH2>
-          </Center>
-          <Row ref={ref}>
-            <VersionColumn>
-              <StyledLND src={image} />
-            </VersionColumn>
-            <VersionColumn>
-              {inView &&
-                transition.map(({ item, props, key }) => (
-                  <animated.div key={key} style={{ ...props }}>
-                    <StyledP key={key} style={{ ...props }}>
-                      {item.title}
-                    </StyledP>
-                  </animated.div>
-                ))}
-            </VersionColumn>
-          </Row>
-        </div>
+        <Center>
+          <StyledH2>Compatible with the latest LND node versions.</StyledH2>
+        </Center>
+        <CompatibleRow ref={ref}>
+          <CompatibleColumn>
+            <CompatibleLND src={image} />
+          </CompatibleColumn>
+          <CompatibleColumn>
+            {inView &&
+              transition.map(({ item, props, key }) => (
+                <AnimatedVersion key={key} style={props}>
+                  {item.title}
+                </AnimatedVersion>
+              ))}
+          </CompatibleColumn>
+        </CompatibleRow>
       </Section>
     </ClippedSection>
   );

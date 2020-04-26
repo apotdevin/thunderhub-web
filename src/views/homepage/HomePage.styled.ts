@@ -55,7 +55,7 @@ export const StyledImage = styled(ThunderHub)`
   }
 
   @media (${mediaWidths.mobile}) {
-    width: 100%;
+    width: 160px;
   }
 `;
 
