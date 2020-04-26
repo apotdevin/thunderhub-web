@@ -35,3 +35,5 @@ yarn-error.log*
 .ebextensions/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+
+.now
