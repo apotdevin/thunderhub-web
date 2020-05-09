@@ -7,7 +7,6 @@ import styled from 'styled-components';
 import { mediaWidths, fontColors } from '../../styles/Themes';
 import { Link } from '../../components/link/Link';
 import { HomeButton } from './HomePage.styled';
-import { Emoji } from '../../components/emoji/Emoji';
 
 const IntegrationStyledImage = styled.div`
   width: 40%;
@@ -73,11 +72,9 @@ export const Integrations = () => {
           <IntegrationStyledText>
             <Text>
               ThunderHub is integrated into BTCPay so that you can quickly and
-              easily get it running. With BTCPay's great software you must
-              include a <Emoji symbol={'🔥'} /> node manager and take control of
-              your lightning node. If you want to add ThunderHub to an existing
-              BTCPay server or want to create one from zero, check out this
-              tutorial.
+              easily get it running. If you want to add ThunderHub to an
+              existing BTCPay server or want to create one from zero, check out
+              this tutorial.
             </Text>
             <IntegrationCenterWrapper>
               <Link
