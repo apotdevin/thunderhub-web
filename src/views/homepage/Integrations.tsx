@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Section } from '../../components/section/Section';
 import BTCPay from '../../assets/BTCPay.svg';
-import { InfoRow } from './Sections.styled';
+import { InfoRow, SectionsTitle } from './Sections.styled';
 import { Text } from '../../components/typography/Styled';
 import styled from 'styled-components';
 import { mediaWidths, fontColors } from '../../styles/Themes';
@@ -37,18 +37,6 @@ const IntegrationMoreText = styled.p`
   }
 `;
 
-const IntegrationTitle = styled.div`
-  width: 100%;
-  text-align: center;
-  font-size: 32px;
-  font-weight: bold;
-  margin: 0 0 32px;
-
-  @media (${mediaWidths.mobile}) {
-    font-size: 24px;
-  }
-`;
-
 const IntegrationButton = styled(HomeButton)`
   background-image: linear-gradient(to right, #1ba000, #1ba000);
   width: unset;
@@ -64,7 +52,7 @@ export const Integrations = () => {
   return (
     <>
       <Section padding={'40px 0 100px'}>
-        <IntegrationTitle>Integrations</IntegrationTitle>
+        <SectionsTitle>Integrations</SectionsTitle>
         <InfoRow>
           <IntegrationStyledImage>
             <BTCPay />

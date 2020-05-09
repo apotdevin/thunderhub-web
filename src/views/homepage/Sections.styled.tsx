@@ -88,3 +88,15 @@ export const ClippedSection = styled.div`
     clip-path: polygon(0 2%, 100% 0, 100% 98%, 0 100%);
   }
 `;
+
+export const SectionsTitle = styled.div`
+  width: 100%;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0 0 32px;
+
+  @media (${mediaWidths.mobile}) {
+    font-size: 24px;
+  }
+`;

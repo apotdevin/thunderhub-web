@@ -5,6 +5,7 @@ import {
   ImageSection,
   ImagePlace,
   TextSection,
+  SectionsTitle,
 } from './Sections.styled';
 import { Text } from '../../components/typography/Styled';
 
@@ -12,6 +13,7 @@ export const InfoSection = () => {
   return (
     <>
       <Section padding={'80px 0 40px'}>
+        <SectionsTitle>Features</SectionsTitle>
         <InfoRow>
           <TextSection>
             <h2>Send and Receive</h2>
