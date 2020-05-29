@@ -67,6 +67,7 @@ export default async function handler(req, res) {
       })
     );
 
+    console.log({ error });
     if (error) {
       res.status(200).json({ status: 'ERROR', reason: 'ErrorCreatingInvoice' });
       return;
