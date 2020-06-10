@@ -57,7 +57,7 @@ export default async function handler(req, res) {
     const [invoice, error] = await toWithError(
       fetch(process.env.LND_REST, {
         method: 'post',
-        body: JSON.stringify({ value: tokens }),
+        body: JSON.stringify({ value: tokens, memo: 'ThunderHub Donation' }),
         headers: {
           Accept: 'application/json',
 
