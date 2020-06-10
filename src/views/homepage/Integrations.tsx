@@ -7,10 +7,12 @@ import styled from 'styled-components';
 import { mediaWidths, fontColors } from '../../styles/Themes';
 import { Link } from '../../components/link/Link';
 import { HomeButton } from './HomePage.styled';
+import raspilogo from '../../assets/raspilogo.png';
 
 const IntegrationStyledImage = styled.div`
   width: 40%;
   text-align: center;
+  align-self: center;
 
   @media (${mediaWidths.mobile}) {
     width: 100%;
@@ -48,12 +50,24 @@ const IntegrationCenterWrapper = styled.div`
   justify-content: center;
 `;
 
+const IntegrationRaspi = styled.img`
+  max-width: 260px;
+`;
+
+const IntegrationInfoRow = styled(InfoRow)`
+  padding-bottom: 32px;
+
+  @media (${mediaWidths.mobile}) {
+    padding-bottom: 60px;
+  }
+`;
+
 export const Integrations = () => {
   return (
     <>
       <Section padding={'40px 0 100px'}>
         <SectionsTitle>Integrations</SectionsTitle>
-        <InfoRow>
+        <IntegrationInfoRow>
           <IntegrationStyledImage>
             <BTCPay />
           </IntegrationStyledImage>
@@ -66,10 +80,33 @@ export const Integrations = () => {
             </Text>
             <IntegrationCenterWrapper>
               <Link
-                href="https://medium.com/@apotdevin/setting-up-btcpay-with-thunderhub-in-5-minutes-392632c00758"
+                href="https://apotdevin.com/blog/thunderhub-btcpay"
                 underline={'transparent'}
               >
                 <IntegrationButton>BTCPay Tutorial</IntegrationButton>
+              </Link>
+            </IntegrationCenterWrapper>
+          </IntegrationStyledText>
+        </IntegrationInfoRow>
+        <InfoRow>
+          <IntegrationStyledImage>
+            <IntegrationRaspi src={raspilogo} />
+          </IntegrationStyledImage>
+          <IntegrationStyledText>
+            <Text>
+              RaspiBlitz is a great tool to get your own node up and running
+              with a cool display. It also has the possibility of extending it's
+              functionality with multiple other tools. Check out these
+              instructions from
+              <Link href="https://twitter.com/openoms">{' @openoms '}</Link>
+              on how to setup ThunderHub.
+            </Text>
+            <IntegrationCenterWrapper>
+              <Link
+                href="https://gist.github.com/openoms/8ba963915c786ce01892f2c9fa2707bc"
+                underline={'transparent'}
+              >
+                <IntegrationButton>RaspiBlitz Setup</IntegrationButton>
               </Link>
             </IntegrationCenterWrapper>
           </IntegrationStyledText>
