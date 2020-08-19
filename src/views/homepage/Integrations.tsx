@@ -8,6 +8,7 @@ import { mediaWidths, fontColors } from '../../styles/Themes';
 import { Link } from '../../components/link/Link';
 import { HomeButton } from './HomePage.styled';
 import raspilogo from '../../assets/raspilogo.png';
+import myNode from '../../assets/myNode.png';
 
 const IntegrationStyledImage = styled.div`
   width: 40%;
@@ -88,7 +89,7 @@ export const Integrations = () => {
             </IntegrationCenterWrapper>
           </IntegrationStyledText>
         </IntegrationInfoRow>
-        <InfoRow>
+        <IntegrationInfoRow>
           <IntegrationStyledImage>
             <IntegrationRaspi src={raspilogo} />
           </IntegrationStyledImage>
@@ -107,6 +108,24 @@ export const Integrations = () => {
                 underline={'transparent'}
               >
                 <IntegrationButton>RaspiBlitz Setup</IntegrationButton>
+              </Link>
+            </IntegrationCenterWrapper>
+          </IntegrationStyledText>
+        </IntegrationInfoRow>
+        <InfoRow>
+          <IntegrationStyledImage>
+            <IntegrationRaspi src={myNode} />
+          </IntegrationStyledImage>
+          <IntegrationStyledText>
+            <Text>
+              MyNode is one of the easiest ways to run a dedicated, easy to use,
+              Bitcoin Node and Lightning Wallet. Now with ThunderHub and more of
+              the best open source software around, myNode makes it easy, safe
+              and secure to use Bitcoin and Lightning.
+            </Text>
+            <IntegrationCenterWrapper>
+              <Link href="https://mynodebtc.com/" underline={'transparent'}>
+                <IntegrationButton>MyNode Website</IntegrationButton>
               </Link>
             </IntegrationCenterWrapper>
           </IntegrationStyledText>
