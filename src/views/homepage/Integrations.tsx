@@ -8,7 +8,7 @@ import { mediaWidths, fontColors } from '../../styles/Themes';
 import { Link } from '../../components/link/Link';
 import { HomeButton } from './HomePage.styled';
 import raspilogo from '../../assets/raspilogo.png';
-import myNode from '../../assets/myNode.png';
+import myNode from '../../assets/myNodeLogo.png';
 
 const IntegrationStyledImage = styled.div`
   width: 40%;
