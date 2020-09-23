@@ -7,14 +7,7 @@ import {
   ResponsiveLine,
 } from '../../components/generic/Styled';
 import styled from 'styled-components';
-import {
-  Eye,
-  Send,
-  Key,
-  Server,
-  Sliders,
-  Users,
-} from '../../components/generic/Icons';
+import { Eye, Send, GitBranch, Server, Sliders, Users } from 'react-feather';
 import { cardColor, mediaWidths } from '../../styles/Themes';
 import { Section } from '../../components/section/Section';
 
@@ -81,14 +74,14 @@ export const DetailSection = () => {
           Server
         )}
         {detailCardContent(
-          'View-Only Mode',
-          'Check the status of your node any time without risk.',
+          'LN-URL',
+          'Use ln-pay and ln-withdraw straight from the homepage.',
           Eye
         )}
         {detailCardContent(
           'AES Encryption',
-          'Your Macaroon is AES encrypted with a password only you know.',
-          Key
+          'Multipath payments enabled when paying an invoice.',
+          GitBranch
         )}
         {detailCardContent(
           'Open Source',

@@ -2,7 +2,7 @@ import React from 'react';
 import { headerColor, headerTextColor } from '../../styles/Themes';
 import { HomeButton } from '../../views/homepage/HomePage.styled';
 import { SingleLine } from '../../components/generic/Styled';
-import { Cpu, Zap } from '../../components/generic/Icons';
+import { Cpu, Zap } from 'react-feather';
 import { Section } from '../../components/section/Section';
 import { Link } from '../../components/link/Link';
 import {
@@ -47,7 +47,7 @@ export const Header = () => {
               href="https://github.com/apotdevin/thunderhub"
             >
               <HomeButton>
-                <Zap fillcolor={'white'} color={'white'} />
+                <Zap fill={'white'} color={'white'} />
               </HomeButton>
             </Link>
           </SingleLine>

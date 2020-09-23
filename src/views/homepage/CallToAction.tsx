@@ -7,7 +7,7 @@ import {
   homeBackgroundSecondColor,
 } from '../../styles/Themes';
 import { HomeButton } from './HomePage.styled';
-import { Zap } from '../../components/generic/Icons';
+import { Zap } from 'react-feather';
 import styled from 'styled-components';
 import { Link } from '../../components/link/Link';
 
@@ -34,7 +34,7 @@ export const CallToAction = () => {
           >
             <CallToActionButton>
               <Padding>
-                <Zap fillcolor={'white'} color={'white'} />
+                <Zap fill={'white'} color={'white'} />
               </Padding>
               Control The Lightning
             </CallToActionButton>

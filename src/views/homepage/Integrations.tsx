@@ -6,9 +6,33 @@ import { Text } from '../../components/typography/Styled';
 import styled from 'styled-components';
 import { mediaWidths, fontColors } from '../../styles/Themes';
 import { Link } from '../../components/link/Link';
-import { HomeButton } from './HomePage.styled';
 import raspilogo from '../../assets/raspilogo.png';
 import myNode from '../../assets/myNodeLogo.png';
+
+export const IntegrationButton = styled.button`
+  cursor: pointer;
+  outline: none;
+  padding: 6px 24px;
+  text-decoration: 2px solid blue;
+  font-size: 16px;
+  background-image: linear-gradient(to right, #1ba000, #1ba000);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  white-space: nowrap;
+
+  box-sizing: border-box;
+  border: 3px solid transparent;
+
+  &:hover {
+    color: black;
+    border: 3px solid #1ba000;
+    background-image: unset;
+    background: transparent;
+  }
+`;
 
 const IntegrationStyledImage = styled.div`
   width: 40%;
@@ -38,11 +62,6 @@ const IntegrationMoreText = styled.p`
   @media (${mediaWidths.mobile}) {
     margin: 80px 0 40px;
   }
-`;
-
-const IntegrationButton = styled(HomeButton)`
-  background-image: linear-gradient(to right, #1ba000, #1ba000);
-  width: unset;
 `;
 
 const IntegrationCenterWrapper = styled.div`

@@ -6,12 +6,12 @@ import {
   HomeText,
   HomeButtonWrapper,
 } from './HomePage.styled';
-import { Zap } from '../../components/generic/Icons';
+import { Zap } from 'react-feather';
 import { inverseTextColor } from '../../styles/Themes';
 import { Section } from '../../components/section/Section';
 import { Padding } from './Sections.styled';
 import { Link } from '../../components/link/Link';
-import { useTransition, animated, config, useChain } from 'react-spring';
+import { useTransition, animated, useChain } from 'react-spring';
 
 export const TopSection = () => {
   const [state] = useState(true);
@@ -48,7 +48,7 @@ export const TopSection = () => {
       >
         <HomeButton>
           <Padding>
-            <Zap fillcolor={'white'} color={'white'} />
+            <Zap fill={'white'} color={'white'} />
           </Padding>
           Control The Lightning
         </HomeButton>
@@ -59,20 +59,22 @@ export const TopSection = () => {
   return (
     <Section color={'transparent'} textColor={inverseTextColor}>
       <Headline>
-        {transition.map(({ props }) => (
-          <animated.div style={props}>
+        {transition.map(({ props }, index) => (
+          <animated.div style={props} key={index}>
             <HomeTitle>Control the Lightning</HomeTitle>
           </animated.div>
         ))}
-        {transition2.map(({ props }) => (
-          <animated.div style={props}>
+        {transition2.map(({ props }, index) => (
+          <animated.div style={props} key={index}>
             <HomeText>
               Monitor and manage your node from any browser and any device.
             </HomeText>
           </animated.div>
         ))}
-        {transition3.map(({ props }) => (
-          <animated.div style={props}>{renderButton()}</animated.div>
+        {transition3.map(({ props }, index) => (
+          <animated.div style={props} key={index}>
+            {renderButton()}
+          </animated.div>
         ))}
       </Headline>
     </Section>

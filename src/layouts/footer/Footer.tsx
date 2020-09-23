@@ -2,17 +2,13 @@ import React from 'react';
 import { Section } from '../../components/section/Section';
 import { Link } from '../../components/link/Link';
 import { Emoji } from '../../components/emoji/Emoji';
-import RouterLink from 'next/link';
-import { Zap } from '../../components/generic/Icons';
-import getConfig from 'next/config';
+import { Zap } from 'react-feather';
 import { headerColor, fontColors } from '../../styles/Themes';
 import {
   FooterWrapper,
   FooterStyle,
   SideFooter,
-  Line,
   Title,
-  Version,
   SideText,
   CopyrightText,
   RightFooter,
@@ -69,7 +65,7 @@ export const Footer = () => {
             >
               <StyledRouter>
                 <HomeButton>
-                  <Zap fillcolor={'white'} color={'white'} />
+                  <Zap fill={'white'} color={'white'} />
                 </HomeButton>
               </StyledRouter>
             </Link>

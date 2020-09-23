@@ -1,7 +1,7 @@
 import React from 'react';
 import { Section } from '../../components/section/Section';
 import { fontColors, homeBackgroundColor } from '../../styles/Themes';
-import { Send, GithubIcon, MailIcon } from '../../components/generic/Icons';
+import { Send, GitHub, Mail } from 'react-feather';
 import {
   Center,
   Question,
@@ -42,7 +42,7 @@ export const ContactSection = () => (
           <Question>
             <IconTitle>
               <IconMargin>
-                <GithubIcon size={'24px'} />
+                <GitHub size={'24px'} />
               </IconMargin>
               Github
             </IconTitle>
@@ -57,7 +57,7 @@ export const ContactSection = () => (
           <Question>
             <IconTitle>
               <IconMargin>
-                <MailIcon size={'24px'} />
+                <Mail size={'24px'} />
               </IconMargin>
               Email
             </IconTitle>
