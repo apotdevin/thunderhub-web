@@ -1,79 +1,42 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { fontColors, mediaWidths } from '../../styles/Themes';
-import ThunderHub from '../../assets/ThunderHub.svg';
 
 export const Headline = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 48px 0 140px;
+  padding: 48px 0 80px;
 
   @media (${mediaWidths.mobile}) {
     flex-direction: column;
-    padding: 0 0 60px;
+    padding: 0 0 32px;
     width: 100%;
-  }
-`;
-
-export const LeftHeadline = styled.div`
-  width: 35%;
-  display: flex;
-  flex-direction: column;
-
-  @media (${mediaWidths.mobile}) {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 0;
-  }
-`;
-
-const flicker = keyframes`
-    0%    { opacity: 1;   }
-    3%    { opacity: 0.4; }
-    6%    { opacity: 1;   }
-    7%    { opacity: 0.4; }
-    8%    { opacity: 1;   }
-    9%    { opacity: 0.4; }
-    10%   { opacity: 0;   }
-    100%  { opacity: 0;   }
-`;
-
-export const StyledImage = styled(ThunderHub)`
-  width: 360px;
-
-  & .glowEffect {
-    animation: ${flicker} 3s infinite step-end;
-  }
-  & .glowEffectTwo {
-    animation: ${flicker} 5s infinite step-end;
-  }
-  & .glowEffectThree {
-    animation: ${flicker} 7s infinite step-end;
-  }
-  & .glowEffectFour {
-    animation: ${flicker} 3.5s infinite step-end;
-  }
-
-  @media (${mediaWidths.mobile}) {
-    width: 160px;
   }
 `;
 
 export const HomeButton = styled.button`
   cursor: pointer;
   outline: none;
-  padding: 8px 24px;
+  padding: 6px 24px;
   text-decoration: 2px solid blue;
   font-size: 16px;
   background-image: linear-gradient(to right, #fd5f00, #f99325);
   color: white;
-  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 8px;
   white-space: nowrap;
   width: 100%;
+  box-sizing: border-box;
+  border: 3px solid transparent;
+
+  &:hover {
+    border: 3px solid #fd5f00;
+    background-image: unset;
+    background: transparent;
+  }
 `;
 
 export const HomeTitle = styled.h1`
@@ -91,6 +54,7 @@ export const HomeTitle = styled.h1`
 `;
 
 export const HomeText = styled.p`
+  margin-top: 16px;
   color: ${fontColors.white};
   text-align: center;
   font-size: 20px;
@@ -98,4 +62,9 @@ export const HomeText = styled.p`
   @media (${mediaWidths.mobile}) {
     font-size: 15px;
   }
+`;
+
+export const HomeButtonWrapper = styled.div`
+  max-width: 240px;
+  padding-top: 32px;
 `;

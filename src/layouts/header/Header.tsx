@@ -12,10 +12,16 @@ import {
   HeaderTitle,
   IconPadding,
 } from './Header.styled';
+import { useRouter } from 'next/dist/client/router';
 
 export const Header = () => {
+  const { pathname } = useRouter();
+  const isHome = pathname === '/';
   return (
-    <Section withColor={true} color={headerColor} textColor={headerTextColor}>
+    <Section
+      color={isHome ? 'transparent' : headerColor}
+      textColor={headerTextColor}
+    >
       <HeaderStyle>
         <HeaderLine>
           <Link to={'/'} underline={'transparent'}>

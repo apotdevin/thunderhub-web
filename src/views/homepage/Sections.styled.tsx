@@ -1,37 +1,22 @@
 import styled from 'styled-components';
 import { headerColor, mediaWidths } from '../../styles/Themes';
 
+export const ThunderStorm = styled.img`
+  height: 450px;
+  width: 100%;
+  top: 0px;
+  object-fit: cover;
+  position: absolute;
+  z-index: -1;
+  background-color: ${headerColor};
+
+  @media (${mediaWidths.mobile}) {
+    font-size: 15px;
+  }
+`;
+
 export const Padding = styled.div`
   padding: 4px 4px 0 0;
-`;
-
-export const SlantedWrapper = styled.div`
-  width: 100%;
-  height: 200px;
-  margin-bottom: -260px;
-  overflow: hidden;
-  z-index: -5;
-`;
-
-export const SlantedEdge = styled.div`
-  content: '';
-  width: 100%;
-  height: 100%;
-  background: ${headerColor};
-  -webkit-transform-origin: 100% 0;
-  -ms-transform-origin: 100% 0;
-  transform-origin: 100% 0;
-  -webkit-transform: skew(84deg);
-  -ms-transform: skew(84deg);
-  transform: skew(88deg);
-  z-index: -5;
-`;
-
-export const FullWidth = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin-top: 8px;
 `;
 
 export const InfoRow = styled.div`

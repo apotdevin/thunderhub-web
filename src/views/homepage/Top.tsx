@@ -1,42 +1,47 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import {
   Headline,
-  LeftHeadline,
-  StyledImage,
   HomeButton,
   HomeTitle,
   HomeText,
+  HomeButtonWrapper,
 } from './HomePage.styled';
 import { Zap } from '../../components/generic/Icons';
-import { headerColor, inverseTextColor } from '../../styles/Themes';
+import { inverseTextColor } from '../../styles/Themes';
 import { Section } from '../../components/section/Section';
-import {
-  FullWidth,
-  Padding,
-  SlantedWrapper,
-  SlantedEdge,
-} from './Sections.styled';
+import { Padding } from './Sections.styled';
 import { Link } from '../../components/link/Link';
-import { useTransition, animated, config } from 'react-spring';
-import { ViewSwitch } from '../../components/viewSwitch/ViewSwitch';
+import { useTransition, animated, config, useChain } from 'react-spring';
 
 export const TopSection = () => {
   const [state] = useState(true);
 
+  const firstRef = useRef();
+  const secondRef = useRef();
+  const thirdRef = useRef();
+
   const transition = useTransition(state, null, {
-    config: config.slow,
-    from: { transform: 'translate3d(-80px,0,0)', opacity: 0 },
+    from: { transform: 'translate3d(0,-80px,0)', opacity: 0 },
     enter: { transform: 'translate3d(0,0,0)', opacity: 1 },
+    ref: firstRef,
   });
 
   const transition2 = useTransition(state, null, {
-    config: config.slow,
-    from: { transform: 'translate3d(80px,0,0)', opacity: 0 },
+    from: { transform: 'translate3d(0,-80px,0)', opacity: 0 },
     enter: { transform: 'translate3d(0,0,0)', opacity: 1 },
+    ref: secondRef,
   });
 
+  const transition3 = useTransition(state, null, {
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    ref: thirdRef,
+  });
+
+  useChain([firstRef, secondRef, thirdRef], [0, 0.4, 0.8]);
+
   const renderButton = () => (
-    <FullWidth>
+    <HomeButtonWrapper>
       <Link
         href="https://github.com/apotdevin/thunderhub"
         underline={'transparent'}
@@ -48,44 +53,28 @@ export const TopSection = () => {
           Control The Lightning
         </HomeButton>
       </Link>
-    </FullWidth>
+    </HomeButtonWrapper>
   );
 
   return (
-    <>
-      <Section color={headerColor} textColor={inverseTextColor}>
-        <Headline>
-          <LeftHeadline>
-            {transition.map(({ props }) => (
-              <animated.div style={props}>
-                <HomeTitle>Control the Lightning</HomeTitle>
-                <FullWidth>
-                  <HomeText>
-                    Monitor and manage your node from any browser and any
-                    device.
-                  </HomeText>
-                </FullWidth>
-                <ViewSwitch hideMobile={true}>{renderButton()}</ViewSwitch>
-              </animated.div>
-            ))}
-          </LeftHeadline>
-          {transition2.map(({ props }) => (
-            <animated.div style={props}>
-              <StyledImage />
-            </animated.div>
-          ))}
-          <ViewSwitch>
-            {transition.map(({ props }) => (
-              <animated.div style={{ marginTop: '16px', ...props }}>
-                {renderButton()}
-              </animated.div>
-            ))}
-          </ViewSwitch>
-        </Headline>
-      </Section>
-      <SlantedWrapper>
-        <SlantedEdge />
-      </SlantedWrapper>
-    </>
+    <Section color={'transparent'} textColor={inverseTextColor}>
+      <Headline>
+        {transition.map(({ props }) => (
+          <animated.div style={props}>
+            <HomeTitle>Control the Lightning</HomeTitle>
+          </animated.div>
+        ))}
+        {transition2.map(({ props }) => (
+          <animated.div style={props}>
+            <HomeText>
+              Monitor and manage your node from any browser and any device.
+            </HomeText>
+          </animated.div>
+        ))}
+        {transition3.map(({ props }) => (
+          <animated.div style={props}>{renderButton()}</animated.div>
+        ))}
+      </Headline>
+    </Section>
   );
 };
