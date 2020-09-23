@@ -7,7 +7,7 @@ import {
   ResponsiveLine,
 } from '../../components/generic/Styled';
 import styled from 'styled-components';
-import { Eye, Send, GitBranch, Server, Sliders, Users } from 'react-feather';
+import { Eye, Send, GitBranch, Sliders, Users, Activity } from 'react-feather';
 import { cardColor, mediaWidths } from '../../styles/Themes';
 import { Section } from '../../components/section/Section';
 
@@ -69,9 +69,9 @@ export const DetailSection = () => {
           Send
         )}
         {detailCardContent(
-          'Multiple Nodes',
-          'Connect to multiple nodes and quickly switch between them.',
-          Server
+          'Rebalancing',
+          'Multiple options to rebalance your node.',
+          Sliders
         )}
         {detailCardContent(
           'LN-URL',
@@ -79,7 +79,7 @@ export const DetailSection = () => {
           Eye
         )}
         {detailCardContent(
-          'AES Encryption',
+          'MPP Enabled',
           'Multipath payments enabled when paying an invoice.',
           GitBranch
         )}
@@ -91,7 +91,7 @@ export const DetailSection = () => {
         {detailCardContent(
           'Manage Channels',
           'Open, close and monitor channel status and liquidity',
-          Sliders
+          Activity
         )}
       </DetailLine>
     </Section>
