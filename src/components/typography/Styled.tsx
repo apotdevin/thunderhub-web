@@ -62,6 +62,10 @@ export const DetailCard = styled(Card)<CardProps>`
   @media (${mediaWidths.mobile}) {
     flex: 1 0 100%;
   }
+
+  &:hover {
+    box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.3);
+  }
 `;
 
 export const DetailLine = styled.div`

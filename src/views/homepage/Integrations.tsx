@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Section } from '../../components/section/Section';
 import BTCPay from '../../assets/BTCPay.svg';
+import Voltage from '../../assets/Voltage.png';
 import { InfoRow, SectionsTitle } from './Sections.styled';
 import { Text } from '../../components/typography/Styled';
 import styled from 'styled-components';
@@ -13,9 +14,8 @@ export const IntegrationButton = styled.button`
   cursor: pointer;
   outline: none;
   padding: 6px 24px;
-  text-decoration: 2px solid blue;
   font-size: 16px;
-  background-image: linear-gradient(to right, #1ba000, #1ba000);
+  background-image: linear-gradient(to right, #fd5f00, #ffa940);
   color: white;
   display: flex;
   align-items: center;
@@ -28,7 +28,7 @@ export const IntegrationButton = styled.button`
 
   &:hover {
     color: black;
-    border: 3px solid #1ba000;
+    border: 3px solid #ffa940;
     background-image: unset;
     background: transparent;
   }
@@ -72,6 +72,7 @@ const IntegrationCenterWrapper = styled.div`
 
 const IntegrationRaspi = styled.img`
   max-width: 260px;
+  max-height: 130px;
 `;
 
 const IntegrationInfoRow = styled(InfoRow)`
@@ -131,7 +132,7 @@ export const Integrations = () => {
             </IntegrationCenterWrapper>
           </IntegrationStyledText>
         </IntegrationInfoRow>
-        <InfoRow>
+        <IntegrationInfoRow>
           <IntegrationStyledImage>
             <IntegrationRaspi src={myNode} />
           </IntegrationStyledImage>
@@ -145,6 +146,26 @@ export const Integrations = () => {
             <IntegrationCenterWrapper>
               <Link href="https://mynodebtc.com/" underline={'transparent'}>
                 <IntegrationButton>MyNode Website</IntegrationButton>
+              </Link>
+            </IntegrationCenterWrapper>
+          </IntegrationStyledText>
+        </IntegrationInfoRow>
+        <InfoRow>
+          <IntegrationStyledImage>
+            <IntegrationRaspi src={Voltage} />
+          </IntegrationStyledImage>
+          <IntegrationStyledText>
+            <Text>
+              To use the Lightning Network at it's full capacity it's a must to
+              have your own node but this can come with a cost and require more
+              technical skills. Voltage removes all these burdens and let's you
+              quickly and easily deploy production ready nodes. Now with
+              ThunderHub integrated as well, you get an awesome UI to manage it
+              all.
+            </Text>
+            <IntegrationCenterWrapper>
+              <Link href="https://getvoltage.io/" underline={'transparent'}>
+                <IntegrationButton>Voltage Website</IntegrationButton>
               </Link>
             </IntegrationCenterWrapper>
           </IntegrationStyledText>

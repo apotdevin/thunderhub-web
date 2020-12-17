@@ -6,6 +6,7 @@ import { Header } from '../src/layouts/header/Header';
 import { Footer } from '../src/layouts/footer/Footer';
 import Head from 'next/head';
 import { PageWrapper, HeaderBodyWrapper } from '../src/layouts/Layout.styled';
+import { Banner } from '../src/components/banner';
 
 class MyApp extends App<any> {
   render() {
@@ -17,6 +18,7 @@ class MyApp extends App<any> {
         </Head>
         <ThemeProvider theme={{ mode: 'light' }}>
           <GlobalStyles />
+          <Banner />
           <PageWrapper>
             <HeaderBodyWrapper>
               <Header />

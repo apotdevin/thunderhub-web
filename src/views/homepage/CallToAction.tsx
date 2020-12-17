@@ -13,6 +13,15 @@ import { Link } from '../../components/link/Link';
 
 const CallToActionButton = styled(HomeButton)`
   margin: 16px 0 0;
+
+  &:hover {
+    color: black;
+
+    & svg {
+      fill: black;
+      stroke: black;
+    }
+  }
 `;
 
 export const CallToAction = () => {
