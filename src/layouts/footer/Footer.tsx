@@ -38,9 +38,6 @@ export const Footer = () => {
             </CopyrightText>
           </SideFooter>
           <RightFooter>
-            <Link to={'/faq'} color={fontColors.blue}>
-              FAQ
-            </Link>
             <Link
               href={'https://github.com/apotdevin/thunderhub'}
               color={fontColors.blue}
@@ -52,12 +49,6 @@ export const Footer = () => {
               color={fontColors.blue}
             >
               Twitter
-            </Link>
-            <Link to={'/terms'} color={fontColors.blue}>
-              Terms of Use
-            </Link>
-            <Link to={'/privacy'} color={fontColors.blue}>
-              Privacy Policy
             </Link>
             <Link
               noStyling={true}

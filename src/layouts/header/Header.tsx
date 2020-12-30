@@ -2,15 +2,15 @@ import React from 'react';
 import { headerColor, headerTextColor } from '../../styles/Themes';
 import { HomeButton } from '../../views/homepage/HomePage.styled';
 import { SingleLine } from '../../components/generic/Styled';
-import { Cpu, Zap } from 'react-feather';
+import { Cpu, GitHub, Twitter, Zap } from 'react-feather';
 import { Section } from '../../components/section/Section';
 import { Link } from '../../components/link/Link';
 import {
-  LinkWrapper,
   HeaderStyle,
   HeaderLine,
   HeaderTitle,
   IconPadding,
+  IconWrapper,
 } from './Header.styled';
 import { useRouter } from 'next/dist/client/router';
 
@@ -33,14 +33,18 @@ export const Header = () => {
             </HeaderTitle>
           </Link>
           <SingleLine>
-            <Link underline={'transaparent'} to="/faq">
-              <LinkWrapper>Faq</LinkWrapper>
+            <Link
+              noStyling={true}
+              href={'https://github.com/apotdevin/thunderhub'}
+            >
+              <IconWrapper>
+                <GitHub />
+              </IconWrapper>
             </Link>
-            <Link underline={'transaparent'} to="/terms">
-              <LinkWrapper>Terms</LinkWrapper>
-            </Link>
-            <Link underline={'transaparent'} to="/privacy">
-              <LinkWrapper last={true}>Privacy</LinkWrapper>
+            <Link href={'https://twitter.com/thunderhubio'} noStyling={true}>
+              <IconWrapper>
+                <Twitter />
+              </IconWrapper>
             </Link>
             <Link
               underline={'transaparent'}

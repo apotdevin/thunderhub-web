@@ -1,5 +1,10 @@
 import styled, { css } from 'styled-components';
-import { headerTextColor, themeColors, mediaWidths } from '../../styles/Themes';
+import {
+  headerTextColor,
+  themeColors,
+  mediaWidths,
+  chartColors,
+} from '../../styles/Themes';
 import { SingleLine } from '../../components/generic/Styled';
 
 export const HeaderStyle = styled.div`
@@ -24,11 +29,12 @@ export const HeaderTitle = styled.div`
 `;
 
 export const IconWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 24px;
-  height: 24px;
+  color: white;
+  margin: 0 24px 0 0;
+
+  :hover {
+    color: ${chartColors.orange};
+  }
 `;
 
 export const LinkWrapper = styled.div`
