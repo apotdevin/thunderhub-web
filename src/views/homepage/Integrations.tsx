@@ -9,6 +9,7 @@ import { mediaWidths, fontColors } from '../../styles/Themes';
 import { Link } from '../../components/link/Link';
 import raspilogo from '../../assets/raspilogo.png';
 import myNode from '../../assets/myNodeLogo.png';
+import umbrel from '../../assets/umbrel.png';
 
 export const IntegrationButton = styled.button`
   cursor: pointer;
@@ -150,7 +151,7 @@ export const Integrations = () => {
             </IntegrationCenterWrapper>
           </IntegrationStyledText>
         </IntegrationInfoRow>
-        <InfoRow>
+        <IntegrationInfoRow>
           <IntegrationStyledImage>
             <IntegrationRaspi src={Voltage} />
           </IntegrationStyledImage>
@@ -166,6 +167,25 @@ export const Integrations = () => {
             <IntegrationCenterWrapper>
               <Link href="https://getvoltage.io/" underline={'transparent'}>
                 <IntegrationButton>Voltage Website</IntegrationButton>
+              </Link>
+            </IntegrationCenterWrapper>
+          </IntegrationStyledText>
+        </IntegrationInfoRow>
+        <InfoRow>
+          <IntegrationStyledImage>
+            <IntegrationRaspi src={umbrel} />
+          </IntegrationStyledImage>
+          <IntegrationStyledText>
+            <Text>
+              Running a bitcoin and lightning node might seem like a difficult,
+              programming intensive job to accomplish. With Umbrel everything is
+              simplified and put behind an awesome and easy to use UI. Now with
+              an App Store included, you can, with the click of a button, add
+              the ThunderHub interface to take full control of your node.
+            </Text>
+            <IntegrationCenterWrapper>
+              <Link href="https://getumbrel.com/" underline={'transparent'}>
+                <IntegrationButton>Umbrel Website</IntegrationButton>
               </Link>
             </IntegrationCenterWrapper>
           </IntegrationStyledText>

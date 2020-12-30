@@ -13,8 +13,8 @@ const S = {
 
 export const Banner = () => {
   return (
-    <Link href="https://getvoltage.io/" underline={'transparent'}>
-      <S.wrapper>Integrated now into Voltage! Check them out here.</S.wrapper>
+    <Link href="https://getumbrel.com/" underline={'transparent'}>
+      <S.wrapper>Integrated now into Umbrel! Check them out here.</S.wrapper>
     </Link>
   );
 };
