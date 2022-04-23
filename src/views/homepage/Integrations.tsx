@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Section } from '../../components/section/Section';
 import BTCPay from '../../assets/BTCPay.svg';
-import Voltage from '../../assets/voltage.png';
+import Voltage from '../../assets/voltageNew.png';
 import { InfoRow, SectionsTitle } from './Sections.styled';
 import { Text } from '../../components/typography/Styled';
 import styled from 'styled-components';
