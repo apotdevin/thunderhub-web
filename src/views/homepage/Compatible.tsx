@@ -79,8 +79,10 @@ export const Compatible = () => {
   useEffect(() => {
     if (inView) {
       setItems([
-        { title: 'v0.11.1-beta', id: 1 },
-        { title: 'v0.11.0-beta', id: 0 },
+        { title: 'v0.14.x-beta', id: 3 },
+        { title: 'v0.13.x-beta', id: 2 },
+        { title: 'v0.12.x-beta', id: 1 },
+        { title: 'v0.11.x-beta', id: 0 },
       ]);
     }
   }, [inView]);

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Section } from '../../components/section/Section';
 import BTCPay from '../../assets/BTCPay.svg';
-import Voltage from '../../assets/Voltage.png';
+import Voltage from '../../assets/voltage.png';
 import { InfoRow, SectionsTitle } from './Sections.styled';
 import { Text } from '../../components/typography/Styled';
 import styled from 'styled-components';
@@ -10,6 +10,7 @@ import { Link } from '../../components/link/Link';
 import raspilogo from '../../assets/raspilogo.png';
 import myNode from '../../assets/myNodeLogo.png';
 import umbrel from '../../assets/umbrel.png';
+import start from '../../assets/start9.png';
 
 export const IntegrationButton = styled.button`
   cursor: pointer;
@@ -74,6 +75,14 @@ const IntegrationCenterWrapper = styled.div`
 const IntegrationRaspi = styled.img`
   max-width: 260px;
   max-height: 130px;
+`;
+
+const IntegrationStart = styled.img`
+  max-width: 260px;
+  max-height: 130px;
+  background: #333;
+  border-radius: 16px;
+  padding: 8px 16px;
 `;
 
 const IntegrationInfoRow = styled(InfoRow)`
@@ -171,7 +180,7 @@ export const Integrations = () => {
             </IntegrationCenterWrapper>
           </IntegrationStyledText>
         </IntegrationInfoRow>
-        <InfoRow>
+        <IntegrationInfoRow>
           <IntegrationStyledImage>
             <IntegrationRaspi src={umbrel} />
           </IntegrationStyledImage>
@@ -186,6 +195,24 @@ export const Integrations = () => {
             <IntegrationCenterWrapper>
               <Link href="https://getumbrel.com/" underline={'transparent'}>
                 <IntegrationButton>Umbrel Website</IntegrationButton>
+              </Link>
+            </IntegrationCenterWrapper>
+          </IntegrationStyledText>
+        </IntegrationInfoRow>
+        <InfoRow>
+          <IntegrationStyledImage>
+            <IntegrationStart src={start} />
+          </IntegrationStyledImage>
+          <IntegrationStyledText>
+            <Text>
+              Start9's EmbassyOS is a revolution in personal computing away from
+              the current, hosted, custodial model that breeds dependency and
+              corruption, towards a decentralized model, where individuals have
+              absolute control over their data and communications.
+            </Text>
+            <IntegrationCenterWrapper>
+              <Link href="https://start9.com/" underline={'transparent'}>
+                <IntegrationButton>Start9 Website</IntegrationButton>
               </Link>
             </IntegrationCenterWrapper>
           </IntegrationStyledText>

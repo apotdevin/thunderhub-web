@@ -12,7 +12,7 @@ import { ThunderStorm } from '../src/views/homepage/Sections.styled';
 const HomePageView = () => {
   return (
     <>
-      <ThunderStorm alt={''} src={'/static/thunderstorm.gif'} />
+      <ThunderStorm alt={''} src={'/static/thunderstorm.webp'} />
       <TopSection />
       <DetailSection />
       <Integrations />
