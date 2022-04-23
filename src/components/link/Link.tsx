@@ -3,7 +3,6 @@ import styled, { css } from 'styled-components';
 import { textColor, linkHighlight } from '../../styles/Themes';
 import { ThemeSet } from 'styled-theming';
 import RouterLink from 'next/link';
-import getConfig from 'next/config';
 
 interface StyledProps {
   fontColor?: string | ThemeSet;
@@ -75,7 +74,7 @@ export const Link = ({
   }
 
   const linkProps = {
-    href: to,
+    href: to || '',
   };
 
   return (

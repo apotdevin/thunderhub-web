@@ -10,6 +10,6 @@ export const getIp = (req: any) => {
   return ip;
 };
 
-export const toWithError = promise => {
+export const toWithError = (promise: Promise<any>) => {
   return promise.then(data => [data, undefined]).catch(err => [undefined, err]);
 };

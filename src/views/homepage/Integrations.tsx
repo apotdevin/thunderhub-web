@@ -1,16 +1,10 @@
 import * as React from 'react';
 import { Section } from '../../components/section/Section';
-import BTCPay from '../../assets/BTCPay.svg';
-import Voltage from '../../assets/voltageNew.png';
 import { InfoRow, SectionsTitle } from './Sections.styled';
 import { Text } from '../../components/typography/Styled';
 import styled from 'styled-components';
 import { mediaWidths, fontColors } from '../../styles/Themes';
 import { Link } from '../../components/link/Link';
-import raspilogo from '../../assets/raspilogo.png';
-import myNode from '../../assets/myNodeLogo.png';
-import umbrel from '../../assets/umbrel.png';
-import start from '../../assets/start9.png';
 
 export const IntegrationButton = styled.button`
   cursor: pointer;
@@ -77,7 +71,7 @@ const IntegrationRaspi = styled.img`
   max-height: 130px;
 `;
 
-const IntegrationStart = styled.img`
+const IntegrationStart9 = styled.img`
   max-width: 260px;
   max-height: 130px;
   background: #333;
@@ -100,7 +94,7 @@ export const Integrations = () => {
         <SectionsTitle>Integrations</SectionsTitle>
         <IntegrationInfoRow>
           <IntegrationStyledImage>
-            <BTCPay />
+            <IntegrationRaspi src={'/assets/BTCPay.svg'} />
           </IntegrationStyledImage>
           <IntegrationStyledText>
             <Text>
@@ -121,7 +115,7 @@ export const Integrations = () => {
         </IntegrationInfoRow>
         <IntegrationInfoRow>
           <IntegrationStyledImage>
-            <IntegrationRaspi src={raspilogo} />
+            <IntegrationRaspi src={'/assets/raspilogo.png'} />
           </IntegrationStyledImage>
           <IntegrationStyledText>
             <Text>
@@ -144,7 +138,7 @@ export const Integrations = () => {
         </IntegrationInfoRow>
         <IntegrationInfoRow>
           <IntegrationStyledImage>
-            <IntegrationRaspi src={myNode} />
+            <IntegrationRaspi src={'/assets/myNodeLogo.png'} />
           </IntegrationStyledImage>
           <IntegrationStyledText>
             <Text>
@@ -162,7 +156,7 @@ export const Integrations = () => {
         </IntegrationInfoRow>
         <IntegrationInfoRow>
           <IntegrationStyledImage>
-            <IntegrationRaspi src={Voltage} />
+            <IntegrationRaspi src={'/assets/voltageNew.png'} />
           </IntegrationStyledImage>
           <IntegrationStyledText>
             <Text>
@@ -182,7 +176,7 @@ export const Integrations = () => {
         </IntegrationInfoRow>
         <IntegrationInfoRow>
           <IntegrationStyledImage>
-            <IntegrationRaspi src={umbrel} />
+            <IntegrationRaspi src={'/assets/umbrel.png'} />
           </IntegrationStyledImage>
           <IntegrationStyledText>
             <Text>
@@ -201,7 +195,7 @@ export const Integrations = () => {
         </IntegrationInfoRow>
         <InfoRow>
           <IntegrationStyledImage>
-            <IntegrationStart src={start} />
+            <IntegrationStart9 src={'/assets/start9.png'} />
           </IntegrationStyledImage>
           <IntegrationStyledText>
             <Text>

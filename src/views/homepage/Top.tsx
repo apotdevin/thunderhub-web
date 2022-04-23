@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import {
   Headline,
   HomeButton,
@@ -11,28 +11,28 @@ import { inverseTextColor } from '../../styles/Themes';
 import { Section } from '../../components/section/Section';
 import { Padding } from './Sections.styled';
 import { Link } from '../../components/link/Link';
-import { useTransition, animated, useChain } from 'react-spring';
+import { useTransition, animated, useChain, useSpringRef } from 'react-spring';
 
 export const TopSection = () => {
   const [state] = useState(true);
 
-  const firstRef = useRef();
-  const secondRef = useRef();
-  const thirdRef = useRef();
+  const firstRef = useSpringRef();
+  const secondRef = useSpringRef();
+  const thirdRef = useSpringRef();
 
-  const transition = useTransition(state, null, {
+  const transition = useTransition(state, {
     from: { transform: 'translate3d(0,-80px,0)', opacity: 0 },
     enter: { transform: 'translate3d(0,0,0)', opacity: 1 },
     ref: firstRef,
   });
 
-  const transition2 = useTransition(state, null, {
+  const transition2 = useTransition(state, {
     from: { transform: 'translate3d(0,-80px,0)', opacity: 0 },
     enter: { transform: 'translate3d(0,0,0)', opacity: 1 },
     ref: secondRef,
   });
 
-  const transition3 = useTransition(state, null, {
+  const transition3 = useTransition(state, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
     ref: thirdRef,
@@ -59,22 +59,20 @@ export const TopSection = () => {
   return (
     <Section color={'transparent'} textColor={inverseTextColor}>
       <Headline>
-        {transition.map(({ props }, index) => (
-          <animated.div style={props} key={index}>
+        {transition(styles => (
+          <animated.div style={styles}>
             <HomeTitle>Control the Lightning</HomeTitle>
           </animated.div>
         ))}
-        {transition2.map(({ props }, index) => (
-          <animated.div style={props} key={index}>
+        {transition2(styles => (
+          <animated.div style={styles}>
             <HomeText>
               Monitor and manage your node from any browser and any device.
             </HomeText>
           </animated.div>
         ))}
-        {transition3.map(({ props }, index) => (
-          <animated.div style={props} key={index}>
-            {renderButton()}
-          </animated.div>
+        {transition3(styles => (
+          <animated.div style={styles}>{renderButton()}</animated.div>
         ))}
       </Headline>
     </Section>

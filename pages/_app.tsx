@@ -9,7 +9,7 @@ import { PageWrapper, HeaderBodyWrapper } from '../src/layouts/Layout.styled';
 
 class MyApp extends App<any> {
   render() {
-    const { Component, pageProps, apollo } = this.props;
+    const { Component, pageProps } = this.props;
     return (
       <>
         <Head>

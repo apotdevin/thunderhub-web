@@ -26,7 +26,7 @@ export default class MyDocument extends Document {
             {initialProps.styles}
             {sheet.getStyleElement()}
           </>
-        ),
+        ) as any,
       };
     } finally {
       sheet.seal();
@@ -37,11 +37,6 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <meta
-            name="viewport"
-            content="initial-scale=1.0, width=device-width"
-            key="viewport"
-          />
           <meta
             name="description"
             content="Manage and monitor your lightning network node right inside your browser"

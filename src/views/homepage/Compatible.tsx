@@ -8,7 +8,6 @@ import {
   mediaWidths,
 } from '../../styles/Themes';
 import { useTransition, animated } from 'react-spring';
-import image from '../../assets/LND.png';
 import { useInView } from 'react-intersection-observer';
 import 'intersection-observer'; // Polyfill
 import styled from 'styled-components';
@@ -69,7 +68,7 @@ const WarningLND = styled.div`
 `;
 
 export const Compatible = () => {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState<{ title: string; id: number }[]>([]);
 
   const [ref, inView] = useInView({
     threshold: 0.3,
@@ -87,7 +86,7 @@ export const Compatible = () => {
     }
   }, [inView]);
 
-  const transition = useTransition(items, item => item.id, {
+  const transitions = useTransition(items, {
     trail: 1000,
     from: {
       transform: inView ? 'translate3d(80px,0,0)' : 'translate3d(0,0,0)',
@@ -110,14 +109,12 @@ export const Compatible = () => {
         </Center>
         <CompatibleRow ref={ref}>
           <CompatibleColumn>
-            <CompatibleLND src={image} />
+            <CompatibleLND src={'/assets/LND.png'} />
           </CompatibleColumn>
           <CompatibleColumn>
             {inView &&
-              transition.map(({ item, props, key }) => (
-                <AnimatedVersion key={key} style={props}>
-                  {item.title}
-                </AnimatedVersion>
+              transitions((styles, item) => (
+                <AnimatedVersion style={styles}>{item.title}</AnimatedVersion>
               ))}
           </CompatibleColumn>
         </CompatibleRow>
