@@ -34,7 +34,8 @@ export const Footer = () => {
               <Emoji symbol={'⚡'} label={'lightning'} />.
             </SideText>
             <CopyrightText>
-              Copyright © 2020. All rights reserved. ThunderHub
+              Copyright © 2020-{new Date().getFullYear()}. All rights reserved.
+              ThunderHub
             </CopyrightText>
           </SideFooter>
           <RightFooter>
