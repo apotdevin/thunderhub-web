@@ -51,6 +51,9 @@ export const Footer = () => {
             >
               Twitter
             </Link>
+            <Link href={'https://docs.thunderhub.io/'} color={fontColors.blue}>
+              Docs
+            </Link>
             <Link
               noStyling={true}
               href={'https://github.com/apotdevin/thunderhub'}

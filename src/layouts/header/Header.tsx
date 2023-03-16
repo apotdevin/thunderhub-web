@@ -2,7 +2,7 @@ import React from 'react';
 import { headerColor, headerTextColor } from '../../styles/Themes';
 import { HomeButton } from '../../views/homepage/HomePage.styled';
 import { SingleLine } from '../../components/generic/Styled';
-import { Cpu, GitHub, Twitter, Zap } from 'react-feather';
+import { Cpu, GitHub, Twitter, Zap, Book } from 'react-feather';
 import { Section } from '../../components/section/Section';
 import { Link } from '../../components/link/Link';
 import {
@@ -44,6 +44,11 @@ export const Header = () => {
             <Link href={'https://twitter.com/thunderhubio'} noStyling={true}>
               <IconWrapper>
                 <Twitter />
+              </IconWrapper>
+            </Link>
+            <Link href={'https://docs.thunderhub.io/'} noStyling={true}>
+              <IconWrapper>
+                <Book />
               </IconWrapper>
             </Link>
             <Link
