@@ -101,14 +101,14 @@ type SubTitleProps = {
 };
 
 export const SubTitle = styled.h4`
-    margin: 5px 0;
-    ${({ subtitleColor }: SubTitleProps) =>
-      subtitleColor &&
-      css`
-        color: ${subtitleColor};
-      `}
-    font-weight: ${({ fontWeight }: SubTitleProps) =>
-      fontWeight ? fontWeight : '500'};
+  margin: 5px 0;
+  ${({ subtitleColor }: SubTitleProps) =>
+    subtitleColor &&
+    css`
+      color: ${subtitleColor};
+    `}
+  font-weight: ${({ fontWeight }: SubTitleProps) =>
+    fontWeight ? fontWeight : '500'};
 `;
 
 export const InverseSubtitle = styled(SubTitle)`
@@ -209,16 +209,16 @@ export const OverflowText = styled.div`
 `;
 
 export const ResponsiveLine = styled(SingleLine)`
-    width: 100%;
-    ${({ withWrap }: { withWrap?: boolean }) =>
-      withWrap &&
-      css`
-        flex-wrap: wrap;
-      `}
+  width: 100%;
+  ${({ withWrap }: { withWrap?: boolean }) =>
+    withWrap &&
+    css`
+      flex-wrap: wrap;
+    `}
 
-    @media (${mediaWidths.mobile}) {
-        flex-direction: column;
-    }
+  @media (${mediaWidths.mobile}) {
+    flex-direction: column;
+  }
 `;
 
 export const ResponsiveCol = styled.div`

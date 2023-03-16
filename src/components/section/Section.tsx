@@ -11,23 +11,23 @@ interface FullWidthProps {
 }
 
 const FullWidth = styled.div`
-    width: 100%;
-    ${({ padding }: FullWidthProps) =>
-      padding &&
-      css`
-        padding: ${padding};
-      `}
-    ${({ textColor }: FullWidthProps) =>
-      textColor &&
-      css`
-        color: ${textColor};
-      `}
+  width: 100%;
+  ${({ padding }: FullWidthProps) =>
+    padding &&
+    css`
+      padding: ${padding};
+    `}
+  ${({ textColor }: FullWidthProps) =>
+    textColor &&
+    css`
+      color: ${textColor};
+    `}
     background-color: ${({ withColor, sectionColor }: FullWidthProps) =>
-      withColor && (sectionColor ? sectionColor : backgroundColor)};
+    withColor && (sectionColor ? sectionColor : backgroundColor)};
 
-    @media (${mediaWidths.mobile}) {
-        padding: 16px 0;
-    }
+  @media (${mediaWidths.mobile}) {
+    padding: 16px 0;
+  }
 `;
 
 const FixedWidth = styled.div`
