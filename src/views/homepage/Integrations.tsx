@@ -168,8 +168,11 @@ export const Integrations = () => {
               all.
             </Text>
             <IntegrationCenterWrapper>
-              <Link href="https://getvoltage.io/" underline={'transparent'}>
-                <IntegrationButton>Voltage Website</IntegrationButton>
+              <Link
+                href="https://docs.voltage.cloud/thunderhub-guide"
+                underline={'transparent'}
+              >
+                <IntegrationButton>Voltage Tutorial</IntegrationButton>
               </Link>
             </IntegrationCenterWrapper>
           </IntegrationStyledText>
